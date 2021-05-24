@@ -8,7 +8,7 @@ module UnidadControl (
 	output reg RegWrite,
 	output reg ALUSrc,
 	output reg RegDst,
-	output reg MemToWrite,
+	output reg MemWrite,
 	output reg [1:0]ALUOp
 );
 
@@ -20,11 +20,11 @@ begin
 			RegDst = 1;
 			ALUSrc = 0;
 			MemToReg = 0;
-			MemToWrite = 0;
+			RegWrite = 1;
 			MemRead = 0;
+			MemWrite = 0;
 			Branch = 0;
 			ALUOp = 2'b10;
-			RegWrite = 1;
 		end
 		
 		6'b100011:
@@ -34,7 +34,7 @@ begin
 			MemToReg = 1;
 			RegWrite = 1;
 			MemRead = 1;
-			MemToWrite = 0;
+			MemWrite = 0;
 			Branch = 0;
 			ALUOp = 2'b00;
 		end
@@ -46,7 +46,7 @@ begin
 			MemToReg = 1'bx;
 			RegWrite = 0;
 			MemRead = 0;
-			MemToWrite = 1;
+			MemWrite = 1;
 			Branch = 0;
 			ALUOp = 2'b00;
 		end
@@ -58,7 +58,7 @@ begin
 			MemToReg = 1'bx;
 			RegWrite = 0;
 			MemRead = 0;
-			MemToWrite = 0;
+			MemWrite = 0;
 			Branch = 1;
 			ALUOp = 2'b01;
 		end		
