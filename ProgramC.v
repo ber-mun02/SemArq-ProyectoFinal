@@ -8,6 +8,6 @@ module PC(
 
 always @(posedge clk)
 begin
-	Direct2 = Direct1
+	Direct2 = Direct1;
 end
 endmodule
