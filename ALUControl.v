@@ -20,7 +20,7 @@ always @* begin
 		case (InData)
 			6'bxxxxxx:
 			begin
-				ALUSelect = 0110;
+				ALUSelect = 4'b0110;
 			end
 		endcase
 	end
@@ -29,23 +29,23 @@ always @* begin
 		case (InData)
 			6'b100000: //add
 			begin
-				ALUSelect = 0010;
+				ALUSelect = 4'b0010;
 			end
 			6'b100010: //subtract
 			begin
-				ALUSelect = 0110;
+				ALUSelect = 4'b0110;
 			end
 			6'b100100: //and
 			begin
-				ALUSelect = 0000;
+				ALUSelect = 4'b0000;
 			end
 			6'b100101: //or
 			begin
-				ALUSelect = 0001;
+				ALUSelect = 4'b0001;
 			end
 			6'b101010: //slt
 			begin
-				ALUSelect = 0111;
+				ALUSelect = 4'b0111;
 			end
 		endcase
 	end
