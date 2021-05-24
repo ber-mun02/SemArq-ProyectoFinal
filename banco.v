@@ -13,8 +13,7 @@ module banco(
 reg [31:0]ban1[0:31];
 
 initial begin
-	$readmemb("datamem", ban1);
-
+	$readmemb("TestF1_BReg", ban1);
 end
 
 always @* begin
