@@ -5,10 +5,13 @@ module InsMemory(
 	output reg [31:0]Instruc
 );
 
-reg [7:0]mem1[0:399];
+reg [7:0]memins[0:399];
 
-always @* begin
-	Instruc = {mem1[Direccion], mem1[Direccion+1], mem1[Direccion+2],mem1[Direccion+3]};
+initial $readmemb("TestF1_MemInst", memins);
+
+always @* 
+begin
+	Instruc = {memins[Direccion], memins[Direccion+1], memins[Direccion+2],memins[Direccion+3]};
 end
 
 endmodule
