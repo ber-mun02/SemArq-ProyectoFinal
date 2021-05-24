@@ -47,6 +47,10 @@ always @* begin
 			begin
 				ALUSelect = 3'b111;
 			end
+			6'b000000: //nop
+			begin
+				//ALUSelect = 3'b111;
+			end
 		endcase
 	end
 end
