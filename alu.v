@@ -11,37 +11,25 @@ module alu(
 always @*
 begin
 	case (sel)
-		3'b000: //suma
-		begin
-			res = a + b;
-		end
-		3'b001: //resta
-		begin
-			res = a - b;
-		end
-		3'b010: //multi
-		begin
-			res = a * b;
-		end
-		3'b011: //divi
-		begin
-			res = a / b;
-		end
-		3'b100: //and
+		3'b000: //and
 		begin
 			res = a & b;
 		end
-		3'b101: //or
+		3'b001: //or
 		begin
 			res = a | b;
 		end
-		3'b110: //slt
+		3'b010: //suma
+		begin
+			res = a + b;
+		end
+		3'b110: //resta
+		begin
+			res = a - b;
+		end
+		3'b111: //slt
 		begin
 			res = a < b ? 1 : 0;
-		end
-		3'b111: //nop
-		begin
-			res = 31'b0;
 		end
 	endcase
 end
