@@ -14,18 +14,18 @@ assign C1 = C0 + 4;
 assign C5 = C1 + C4;
 assign C8 = C6 & C7;
 
-PC DUV1(
+PC ProgramCounter(
 	.Direct1(C9),
 	.clk(Eclk),
 	.Direct2(C0)
 );
 
-InsMemory DUV2(
+InsMemory MemoriaDeInstrucciones(
 	.Direccion(C0),
 	.Instruc(Instruccion)
 );
 
-UnidadControl DUV3(
+UnidadControl UC(
 	.OP(Instruccion[31:26]),
 	.MemRead(C20),
 	.Branch(C6),
@@ -37,14 +37,14 @@ UnidadControl DUV3(
 	.ALUOp(C15)
 );
 
-mux_5 DUV4(
+mux_5 Multiplexor5b(
 	.in_0(Instruccion[20:16]),
 	.in_1(Instruccion[15:11]),
 	.regule(C10),
 	.res(C2)
 );
 
-banco DUV5(
+banco BR(
 	.RegEn(C17),
 	.ra1(Instruccion[25:21]),
 	.ra2(Instruccion[20:16]),
@@ -54,37 +54,37 @@ banco DUV5(
 	.dr2(C12)
 );
 
-sign_extend DUV6(
+sign_extend SE(
 	.instruccionIn(Instruccion[15:0]),
 	.instruccionOut(C3)
 );
 
-shift_left2 DUV7(
+shift_left2 SL(
 	.instruccionIn(C3),
 	.instruccionOut(C4)
 );
 
-mux_32 DUV8(
+mux_32 Multiplexor32_1(
 	.in_0(C1),
 	.in_1(C5),
 	.regule(C8),
 	.res(C9)
 );
 
-mux_32 DUV9(
+mux_32 Multiplexor32_2(
 	.in_0(C12),
 	.in_1(C3),
 	.regule(C11),
 	.res(C13)
 );
 
-ALUControl DUV10(
+ALUControl AC(
 	.InData(Instruccion[5:0]),
 	.UCon(C15),
 	.ALUSelect(C16)
 );
 
-alu DUV11(
+alu ALU(
 	.a(C14),
 	.b(C13),
 	.sel(C16),
@@ -92,7 +92,7 @@ alu DUV11(
 	.ZF(C7)
 );
 
-memory DUV12(
+memory Mem(
 	.MemWrite(C19), 
 	.MemRead(C20),
 	.dir(C18),
@@ -100,7 +100,7 @@ memory DUV12(
 	.dataOut(C21)
 );
 
-mux_32 DUV13(
+mux_32 Multiplexor32_3(
 	.in_0(C18),
 	.in_1(C21),
 	.regule(C23),
