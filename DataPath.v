@@ -29,7 +29,7 @@ UnidadControl DUV3(
 	.OP(Instruccion[31:26]),
 	.MemRead(C20),
 	.Branch(C6),
-	.MemToReg(),
+	.MemToReg(C23),
 	.RegWrite(C17),
 	.ALUSrc(C11),
 	.RegDst(C10),
