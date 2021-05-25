@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
 
 module PC(
-	input Direct1,
+	input [31:0]Direct1,
 	input clk,
-	output reg Direct2
+	output reg [31:0]Direct2
 );
 
 always @(posedge clk)
