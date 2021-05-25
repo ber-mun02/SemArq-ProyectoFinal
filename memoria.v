@@ -3,7 +3,7 @@
 module memory(
 	input MemWrite, 
 	input MemRead,
-	input [4:0]dir,
+	input [31:0]dir,
 	input [31:0]dataIn,
 	output reg [31:0]dataOut
 );
