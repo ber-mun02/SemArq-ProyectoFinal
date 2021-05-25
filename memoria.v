@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module memoria(
+module memory(
 	input MemWrite, 
 	input MemRead,
 	input [4:0]dir,
