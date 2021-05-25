@@ -4,15 +4,17 @@ module TB_DataPath ();
 
 reg clk = 1'b0;
 
-always @* #100 clk != clk;
-
 DataPathFase1 DUV(
 	.Eclk(clk)
 );
 
-
-initial
-begin
-	//test bench
+always @* #100 begin
+	if (clk == 1'b1) begin
+		clk <= 1'b0;
+	end
+	else begin
+		clk <= 1'b1;
+	end
 end
+
 endmodule
