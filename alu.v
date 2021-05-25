@@ -31,6 +31,10 @@ begin
 		begin
 			res = a < b ? 1 : 0;
 		end
+		3'b011: //nop
+		begin
+			res = 32'b0;
+		end
 	endcase
 end
 
