@@ -1,20 +1,18 @@
 `timescale 1ns/1ns
-
-module TB_DataPath ();
-
-reg clk = 1'b0;
-
-DataPathFase1 DUV(
+module TB_TopLevel;
+    
+    reg clk;     
+      
+    DataPathFase1 DUV(
 	.Eclk(clk)
-);
-
-always @* #100 begin
-	if (clk == 1'b1) begin
-		clk <= 1'b0;
-	end
-	else begin
-		clk <= 1'b1;
-	end
-end
-
+	);   
+	
+    always #100 clk = ~clk;      
+    initial begin
+        
+        clk <= 1;         
+        #300 
+	$stop;    
+	    
+    end
 endmodule
