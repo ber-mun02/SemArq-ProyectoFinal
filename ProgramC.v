@@ -5,9 +5,11 @@ module PC(
 	input clk,
 	output reg [31:0]Direct2
 );
+	
+assign Direct2 = 32'd0;
 
-always @(posedge clk)
-begin
+always @(posedge clk) begin
 	Direct2 = Direct1;
 end
+	
 endmodule
