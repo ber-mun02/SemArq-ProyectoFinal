@@ -2,30 +2,42 @@
 
 module ALUControl (
 	input [5:0]InData,	//datos de la instruccion
-	input [1:0]UCon,	//bits provinientes de la unidad de control
+	input [2:0]UCon,	//bits provinientes de la unidad de control
 	output reg [2:0]ALUSelect	//selector de operación en ALU
 );
 
 always @* begin
-	if (UCon == 2'b00) begin
-		case (InData)
-			6'bxxxxxx:
-			begin
-				ALUSelect = 3'b010;
-			end
-		endcase
-	end
+	if (UCon == 3'b000)
+		begin
+			ALUSelect = 3'b010;				//sw / lw
+		end
 
-	if (UCon == 2'b01) begin
-		case (InData)
-			6'bxxxxxx:
-			begin
-				ALUSelect = 3'b110;
-			end
-		endcase
-	end
+	if (UCon == 3'b001)						
+		begin
+			ALUSelect = 3'b110;				//beq
+		end
 
-	if (UCon == 2'b10) begin
+	if (UCon == 3'b011) 
+		begin
+			ALUSelect = 3'b010;				//addi
+		end
+
+	if (UCon == 3'b100) 
+		begin
+			ALUSelect = 3'b000;				//andi
+		end
+
+	if (UCon == 3'b101) 
+		begin
+			ALUSelect = 3'b001;				//ori
+		end
+
+	if (UCon == 3'b110) 
+		begin
+			ALUSelect = 3'b111;				//slti
+		end
+
+	if (UCon == 3'b010) begin
 		case (InData)
 			6'b100000: //add
 			begin
