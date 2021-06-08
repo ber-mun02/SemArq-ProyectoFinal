@@ -4,16 +4,16 @@ module DataPathFase2(
 	input Eclk
 );
 
-wire [31:0]Instruction, C0, C1, C2, C3, C4, C5, C11, C12, C13, C14, C18, C21, C22, C23, C26, C28, C29, C30, C38, C40, C41, C44, C45, C46;
+wire [31:0]C0, C1, C2, C3, C4, C5, C11, C12, C13, C14, C18, C21, C22, C23, C26, C28, C29, C30, C38, C40, C41, C44, C45, C46;
 wire [1:0]C6, C15, C37;
 wire [2:0]C7, C9, C16, C27;
 wire [4:0]C17, C20, C24, C25, C32, C33;
 wire C8, C10, C19, C31, C34, C35, C36, C39, C42, C43;
 
-assign C3 = C1 + 4;				//suma +4
-assign C42 = C39 & C34;			//compuerta and
-assign C28 = C11 + C26;			//add result
-
+assign C3 = C1 + 4;					//suma +4
+assign C42 = C39 & C34;					//compuerta and
+assign C28 = C11 + C26;					//add result
+	
 PC ProgramCounter(
 	.Direct1(C0),
 	.clk(Eclk),
@@ -144,7 +144,13 @@ MEMWB MEM_WB(
 	.clkMEMWB(Eclk),
 	.WB3(C37),
 	.RegWrite(C19),
-	.MemtoReg(C43)
+	.MemtoReg(C43),
+	.fAdd(C40),
+	.fRD(C44),
+	.fEXMEM(C33),
+	.toAW(C20),
+	.tMux5_0(C45),
+	.tMux5_1(C46)
 );
 
 mux_32 Multiplexor32_2(
