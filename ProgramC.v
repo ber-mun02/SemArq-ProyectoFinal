@@ -8,7 +8,7 @@ module PC(
 	
 assign Direct2 = 32'd0;
 
-always @(posedge clk) begin
+always @* #600 begin
 	Direct2 = Direct1;
 end
 	
