@@ -47,8 +47,8 @@ sign_extend SE(
 
 banco BR(
 	.RegEn(C19),
-	.ra1(C4),
-	.ra2(C4),
+	.ra1(C4[25:21]),
+	.ra2(C4[20:16]),
 	.aw(C20),							
 	.dataIn_b(C21),
 	.dr1(C22),
