@@ -5,7 +5,7 @@ module IDEX(
 	input [1:0]WB1,					//Wb1
 	input [2:0]M1,					//Mem1
 	input [4:0]EX,					//RegDst / ALUOp / ALUSrc	
-	input fIFIDa4,					//tAdd
+	input [31:0]fIFIDa4,					//tAdd
 	input [31:0]fBR1,				//tALU
 	input [31:0]fBR2,				//tMux32
 	input [31:0]fSE,				//tACsl
