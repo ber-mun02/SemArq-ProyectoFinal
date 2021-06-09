@@ -16,3 +16,4 @@ always @* #100 begin
 		clk <= 1'b1;
 	end      
 end
+endmodule
