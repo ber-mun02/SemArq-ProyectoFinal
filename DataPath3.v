@@ -15,7 +15,7 @@ wire [25:0] ca;
 wire [27:0] cb;
 wire [31:0] cc, cd, ce;
 
-assign cb = { ca, 00 };
+assign cb = { ca, 2'b0 };
 assign cc = { C11[31:28], cb};
 	
 assign C3 = C1 + 4;				     	//suma +4
@@ -45,7 +45,8 @@ UnidadControl UC(
 	.OP(C4[31:26]),
 	.tWB(C15),
 	.tM(C16),
-	.tEX(C17)
+	.tEX(C17),
+	.jump(cx)
 );
 
 sign_extend SE(
