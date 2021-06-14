@@ -12,6 +12,7 @@ module IDEX(
 	input [4:0]fIns1,				//tMux5_1
 	input [4:0]fIns2,				//tMux5_2
 	input jump_in,
+	input [25:0]insad_in,
 	output reg[1:0]Wb1,
 	output reg[2:0]Mem1,
 	output reg RegDst,
@@ -23,7 +24,8 @@ module IDEX(
 	output reg[31:0]tACsl,
 	output reg[4:0]tMux5_1,
 	output reg[4:0]tMux5_2,
-	output reg jump_out
+	output reg jump_out,
+	output reg [25:0]insad_out
 );
 
 always @(posedge clkIDEX) 
@@ -40,6 +42,7 @@ begin
 	tMux5_1	= fIns1;
 	tMux5_2 = fIns2;
 	jump_out = jump_in;
+	insad_out = insad_in;
 end
 
 endmodule
