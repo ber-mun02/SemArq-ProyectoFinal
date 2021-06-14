@@ -81,7 +81,11 @@ IDEX ID_EX(
 	.tMux32(C13),
 	.tACsl(C14),
 	.tMux5_1(C24),
-	.tMux5_2(C25)
+	.tMux5_2(C25),
+	.jump_in(cx),
+	.jump_out(cy),
+	.insad_in(C4[25:0]),
+	.insad_out(ca)
 );
 
 shift_left2 SL(
