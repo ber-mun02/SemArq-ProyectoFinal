@@ -15,6 +15,7 @@ wire [25:0] ca;
 wire [27:0] cb;
 wire [31:0] cc, cd, ce;
 
+assign cb = { ca, 00 };
 assign cc = { C11[31:28], cb};
 	
 assign C3 = C1 + 4;				     	//suma +4
