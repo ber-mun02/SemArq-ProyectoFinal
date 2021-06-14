@@ -10,6 +10,7 @@ module EXMEM(
 	input [31:0]fIDEXrd,			//tWriteData
 	input [4:0]fMux5,				//toMEMWB
 	input jump_in,
+	input [31:0]jaddress_in,
 	output reg[1:0]Wb2,
 	output reg Branch,
 	output reg MemRead,
@@ -19,7 +20,8 @@ module EXMEM(
 	output reg [31:0]AluRes,
 	output reg [31:0]tWriteData,
 	output reg [4:0]toMEMWB,
-	output reg jump_out
+	output reg jump_out,
+	output reg [31:0] jaddress_out
 );
 
 always @(posedge clkEXMEM) 
@@ -34,6 +36,7 @@ begin
 	tWriteData = fIDEXrd;
 	toMEMWB = fMux5;
 	jump_out = jump_in;
+	jaddress_out = jaddress_in;
 end
 
 endmodule
