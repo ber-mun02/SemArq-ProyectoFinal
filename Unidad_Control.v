@@ -12,7 +12,7 @@ module UnidadControl (
 always @*
 begin
 	case (OP)
-		6'b000000:					//Instrucciones tipo R
+		6'b000000:				//Instrucciones tipo R
 		begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
@@ -28,7 +28,7 @@ begin
 			//ALUOp = 3'b010;
 		end
 		
-		6'b100011:					//Lw
+		6'b100011:				//Lw
 		begin
 			tWB = 2'b11;			//RegWrite / MemToReg
 			tM = 3'b010;			//MemToWrite / MemRead / Branch
@@ -44,7 +44,7 @@ begin
 			//ALUOp = 3'b000;
 		end
 		
-		6'b101011:					//Sw
+		6'b101011:				//Sw
 		begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b100;			//MemToWrite / MemRead / Branch
@@ -60,7 +60,7 @@ begin
 			//ALUOp = 3'b000;
 		end
 		
-		6'b000100:					//beq
+		6'b000100:				//beq
 		begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b001;			//MemToWrite / MemRead / Branch
@@ -92,7 +92,7 @@ begin
 			//ALUOp = 3'b011;
 		end	
 
-		6'b001100:					//Andi
+		6'b001100:				//Andi
 		begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
@@ -108,7 +108,7 @@ begin
 			//ALUOp = 3'b100;
 		end	
 
-		6'b001101:					//Ori
+		6'b001101:				//Ori
 		begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
@@ -124,7 +124,7 @@ begin
 			//ALUOp = 3'b101;
 		end	
 
-		6'b001010:					//Slti
+		6'b001010:				//Slti
 		begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
@@ -145,7 +145,7 @@ begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b00000;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 		end
 	endcase
 end
