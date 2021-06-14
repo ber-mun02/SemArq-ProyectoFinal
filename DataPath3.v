@@ -138,7 +138,11 @@ EXMEM EX_MEM(
 	.ZFtAND(C39),
 	.AluRes(C40),
 	.tWriteData(C41),
-	.toMEMWB(C33)
+	.toMEMWB(C33),
+	.jump_in(cy),
+	.jump_out(cz),
+	.jaddress_in(cc),
+	.jaddress_out(cd)
 );
 
 memory MEM(
