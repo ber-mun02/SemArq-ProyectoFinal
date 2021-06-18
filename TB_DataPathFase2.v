@@ -2,18 +2,18 @@
 
 module TB_DataPathFase2 ();
     
-reg clk = 1'b0;     
+    reg clk;     
       
-DataPathFase2 DUV(
+    DataPathFase2 DUV(
 	.Eclk(clk)
-);   
+	);   
 	
-always @* #100 begin      
-	if (clk == 1'b1) begin
-		clk <= 1'b0;       
-        end
-	else begin
-		clk <= 1'b1;
-	end      
-end
+    always #100 clk = ~clk;      
+    initial begin
+        
+        clk <= 1;         
+        #300 
+	$stop;    
+	    
+    end
 endmodule
