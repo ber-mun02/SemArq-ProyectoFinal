@@ -6,10 +6,12 @@ module PC(
 	output reg [31:0]Direct2
 );
 	
-assign Direct2 = 32'd0;
+always @(posedge clk)
+	if (!Direct1) begin 
+		Direct2 <= Direct1;
+	end
+	else begin
+		Direct2 = 0;
+	end
 
-always @* #600 begin
-	Direct2 = Direct1;
-end
-	
 endmodule
