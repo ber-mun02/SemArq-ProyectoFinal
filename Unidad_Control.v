@@ -17,7 +17,7 @@ begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b00101;			//ALUSrc / ALUOp / RegDst  
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 1;
 			//ALUSrc = 0;
 			//MemToReg = 0;
@@ -33,7 +33,7 @@ begin
 			tWB = 2'b11;			//RegWrite / MemToReg
 			tM = 3'b010;			//MemToWrite / MemRead / Branch
 			tEX = 5'b10000;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 0;
 			//ALUSrc = 1;
 			//MemToReg = 1;
@@ -49,7 +49,7 @@ begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b100;			//MemToWrite / MemRead / Branch
 			tEX = 5'b10000;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 1'b0;
 			//ALUSrc = 1;
 			//MemToReg = 1'b0;
@@ -65,7 +65,7 @@ begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b001;			//MemToWrite / MemRead / Branch
 			tEX = 5'b00010;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 1'b0;
 			//ALUSrc = 0;
 			//MemToReg = 1'b0;
@@ -81,7 +81,7 @@ begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b10110;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 0;
 			//ALUSrc = 1;
 			//MemToReg = 0;
@@ -97,7 +97,7 @@ begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b11000;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 0;
 			//ALUSrc = 1;
 			//MemToReg = 0;
@@ -113,7 +113,7 @@ begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b11010;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 0;
 			//ALUSrc = 1;
 			//MemToReg = 0;
@@ -129,7 +129,7 @@ begin
 			tWB = 2'b10;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b11100;			//ALUSrc / ALUOp / RegDst	
-			jump = 1'b0;
+			jump = 1'b1;
 			//RegDst = 0;
 			//ALUSrc = 1;
 			//MemToReg = 0;
@@ -145,7 +145,7 @@ begin
 			tWB = 2'b00;			//RegWrite / MemToReg
 			tM = 3'b000;			//MemToWrite / MemRead / Branch
 			tEX = 5'b00000;			//ALUSrc / ALUOp / RegDst
-			jump = 1'b1;
+			jump = 1'b0;
 		end
 	endcase
 end
