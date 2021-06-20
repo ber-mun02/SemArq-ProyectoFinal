@@ -185,8 +185,8 @@ mux_32 Multiplexor32_3(
 );
 
 mux_32 Multiplexor_Jump(
-	.in_0(C0),
-	.in_1(cd),
+	.in_0(cd),
+	.in_1(C0),
 	.regule(cz),
 	.res(ce)
 );
