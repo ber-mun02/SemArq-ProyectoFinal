@@ -1,45 +1,12 @@
 .inicio:
 
 nop
-beq $1, $5, 4
-xori $13, $13, 170             #Aplica clave -> H
-sw $13, 0($5)
-j 9
-nop
-nop
-nop
-beq $2, $5, 4
-xori $20, $20, 170             #Aplica clave -> O
-sw $13, 0($5)
-j 16
-nop
-nop
-nop
-beq $3, $5, 4
-xori $17, $17, 170             #Aplica clave -> L
-sw $13, 0($5)
-j 23
-nop
-nop
-nop
-beq $3, $5, 4
-xori $6, $6, 170               #Aplica clave -> A
-sw $13, 0($5)
-j 30
-nop
-nop
-nop
-addi $5, $5, 1                 #Suma $5 = $5 + 1
-beq $4, $5, 1
+addi $3, $3, 1
+lw $9, 1($5)
+addi $5, $5, 2
+xor $9, $9, $10
+sw $9, 1($6)
+addi $6, $6, 2
+beq $4, $3, 1
 j 1
-nop
-nop
-nop 
-lw $13, 13($0)
-lw $20, 20($0)
-lw $17, 17($0)
-lw $6, 6($0)
-nop
-nop
-nop
 nop
