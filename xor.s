@@ -34,4 +34,12 @@ beq $4, $5, 1
 j 1
 nop
 nop
+nop 
+lw $13, 13($0)
+lw $20, 20($0)
+lw $17, 17($0)
+lw $6, 6($0)
+nop
+nop
+nop
 nop
