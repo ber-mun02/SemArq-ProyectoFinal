@@ -2,22 +2,43 @@
 
 nop
 
-xori $27, $8, 170            #Aplica clave -> H
-xori $28, $15, 170           #Aplica clave -> O
-xori $29, $17, 170           #Aplica clave -> L
-xori $30, $1, 170            #Aplica clave -> A
+beq $1, $5, 1
+xori $13, $13, 170             #Aplica clave -> H
+j
 
-sw $27, 1($zero)             #Guarda H clave en mem[1]
-sw $28, 2($zero)             #Guarda O clave en mem[2]
-sw $29, 3($zero)             #Guarda L clave en mem[3]
-sw $30, 4($zero)             #Guarda A clave en mem[4]
-
-lw $1, 8($zero)              #Guarda H clave sobre H
-lw $2, 15($zero)             #Guarda O clave sobre O
-lw $3, 17($zero)             #Guarda L clave sobre L
-lw $4, 1($zero)              #Guarda A clave sobre A
-
-beq $zero, $zero, .inicio    #Repetir operaciones 
-                             #Ahora cambiamos las letras codificadas a el mensaje original
-                            
 nop
+nop
+nop
+
+beq $2, $5, 1
+xori $20, $20, 170             #Aplica clave -> O
+j 
+
+nop
+nop
+nop
+
+beq $3, $5, 1
+xori $17, $17, 170             #Aplica clave -> L
+j 
+
+nop
+nop
+nop
+
+beq $4, $5, 1
+xori $6, $6, 170               #Aplica clave -> A
+j 
+
+nop
+nop
+nop
+
+addi $5, $5, 1                 #Registro $5 = $5 + 1
+beq $4, $5, 1                  #Si (4 == 1) -> PC + 1
+j 1                            #Salto a instrucción 1
+
+nop
+nop
+nop
+
