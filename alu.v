@@ -35,6 +35,10 @@ begin
 		begin
 			res = 32'b0;
 		end
+		3'b100: //xor
+		begin
+			res = a ^ b;
+		end 
 	endcase
 end
 
