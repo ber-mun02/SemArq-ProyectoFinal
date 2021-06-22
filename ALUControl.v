@@ -63,6 +63,10 @@ always @* begin
 			begin
 				ALUSelect = 3'b011;
 			end
+			6'b100110: //xor
+			begin
+				ALUSelect = 3'b100;
+			end
 		endcase
 	end
 end
